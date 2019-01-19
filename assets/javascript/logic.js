@@ -29,12 +29,7 @@ var empRate = $("#empRate").val();
 
 
 // Initial Values
-var newEmp = {
-  name: empName,
-  role: empRole,
-  start: empStart,
-  rate: empRate
-};
+
 
 
 
@@ -53,6 +48,13 @@ var newEmp = {
 $("#submit").on("click", function(event) { 
   // Prevent form from submitting
   event.preventDefault();
+
+  var newEmp = {
+    name: empName,
+    role: empRole,
+    start: empStart,
+    rate: empRate
+  };
 
   // Get the input values
   database.ref().push(newEmp);
