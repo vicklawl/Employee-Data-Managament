@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Data management</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js">
+    <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
+  </head>
 
         <script src="./assets/javascript/logic.js"></script>
 </head>
@@ -22,7 +23,7 @@
 
 
        <!-- tables -->
-
+      <section class="container">
        <table class="table">
         <thead class="thead-dark">
           <tr>
@@ -45,9 +46,9 @@
           </tr>
           <tr>
             <th scope="row">Victor</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
+            <td>Programmer</td>
+            <td>01/02/2018</td>
+            <td></td>
             <td>@fat</td>
           </tr>
           <tr>
@@ -60,22 +61,44 @@
           </tr>
         </tbody>
        </table> 
+      </section>
        <br></br>
+      
+       <section class="container">
 
        <h4>Add Employees!</h4>
 
+        <!-- text boxes -->
+      </section>
+      <br></br>
+      </section>
 
-       <!-- text boxes -->
-
-       <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">@</span>
-        </div>
-        <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+      <section class="container">
+        <form>
+       <div class="form-group">
+         <label for="exampleFormControlInput1">Employee Name</label>
+         <input type="search" class="form-control" id="empName" placeholder="">
+       </div>
+       <div class="form-group">
+         <label for="exampleFormControlInput1">Role</label>
+         <input type="search" class="form-control" id="empRole" placeholder="">
        </div>
 
+       <div class="form-group">
+         <label for="exampleFormControlTextarea1">Start Date (MM/DD/YYYY)</label>
+         <input type="search" class="form-control" id="empStart" placeholder="">
+       </div>
 
-       <button type="button" class="btn btn-primary">Submit</button
+       <div class="form-group">
+         <label for="exampleFormControlTextarea1"></label>Monthly Rate</label>
+         <input type="search" class="form-control" id="emprate" placeholder="">
+       </div>
+       <button type="button" class="btn btn-primary">Submit</button>
+      </section>
+
+     </form>
+
+       
 
 
 
