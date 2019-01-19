@@ -1,6 +1,5 @@
 // Initialize Firebase
 
-{/* <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script> */}
 
   // Initialize Firebase
   var config = {
@@ -22,10 +21,7 @@
 var database = firebase.database();
 
 //get the input values from the form
-var empName = $("#empName").val();
-var empRole = $("#empRole").val();
-var empStart = $("#empStart").val();
-var empRate = $("#empRate").val();
+
 
 
 // Initial Values
@@ -45,9 +41,16 @@ var empRate = $("#empRate").val();
 // --------------------------------------------------------------
 
 // Whenever a user clicks the submit-bid button
-$("#submit").on("click", function(event) { 
+$("#onSubmit").on("click", function(event) { 
   // Prevent form from submitting
   event.preventDefault();
+
+  console.log("Came to click submit button");
+
+  var empName = $("#empName").val();
+  var empRole = $("#empRole").val();
+  var empStart = $("#empStart").val();
+  var empRate = $("#empRate").val();
 
   var newEmp = {
     name: empName,
