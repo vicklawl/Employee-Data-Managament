@@ -21,9 +21,22 @@
 // Assign the reference to the database to a variable named 'database'
 var database = firebase.database();
 
+//get the input values from the form
+var empName = $("#");
+var empRole = $("#");
+var empStart = $("#");
+var empRate = $("#");
+
 
 // Initial Values
+var newEmp = {
+  name: empName,
+  role: empRole,
+  start: empStart,
+  rate: empRate
+};
 
+database.ref().push(newEmp);
 
 // --------------------------------------------------------------
 
