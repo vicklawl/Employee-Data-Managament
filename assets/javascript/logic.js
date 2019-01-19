@@ -21,13 +21,15 @@
 var database = firebase.database();
 
 //get the db values to populate the table
-database.ref().on("value", function(snapshot) {
+database.ref().on("child_added", function(snapshot) {
   var name = snapshot.val().name;
   var rate = snapshot.val().rate;
   var role = snapshot.val().role;
   var start = snapshot.val().start;
 
-  console.log("name from DB is " + name);
+  console.log("name from DB is " + JSON.stringify(snapshot.val()));
+
+  // console.log("name is " + snapshot.-LWb0HTs8V6kdJ3h_wzr.name);
 
   $block = $("<tr>");
   $name = $("<td>" + name + "</td>");
@@ -89,8 +91,8 @@ $("#onSubmit").on("click", function(event) {
     
   });
 
-  database.ref().on("child_added", function(childSnapshot){
-    console.log(childSnapshot.val());
+  // database.ref().on("child_added", function(childSnapshot){
+  //   console.log(childSnapshot.val());
 
-  });
+  // });
 
