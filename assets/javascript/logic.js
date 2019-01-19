@@ -15,6 +15,16 @@
 
 // Make sure to match the configuration to the script version number in the HTML
 // (Ex. 3.0 != 3.7.0)
+function monthDiffFromToday(dateString) {
+  var months;
+  var d1 = new Date(dateString);
+  var d2 = new Date();
+  // var d2 = today.getMonth() + "/" + today.getDay() + "/" + today.getFullYear();
+  months = (d2.getFullYear() - d1.getFullYear()) * 12;
+  months -= d1.getMonth() + 1;
+  months += d2.getMonth();
+  return months <= 0 ? 0 : months;
+}
 
 
 // Assign the reference to the database to a variable named 'database'
@@ -34,12 +44,14 @@ database.ref().on("child_added", function(snapshot) {
   $block = $("<tr>");
   $name = $("<td>" + name + "</td>");
   $role = $("<td>" + role + "</td>");
-  $monthsworked = $("<td>" + "</td>");
+  $start = $("<td>" + start + "</td>");
+  $monthsworked = $("<td>" + monthDiffFromToday(start) + "</td>");
   $rate = $("<td>" + rate + "</td>");
   $total = $("<td>"  + "</td>");
 
   $block.append($name);
   $block.append($role);
+  $block.append($start);
   $block.append($monthsworked);
   $block.append($rate);
   $block.append($total);
