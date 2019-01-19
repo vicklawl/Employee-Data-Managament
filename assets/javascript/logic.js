@@ -45,9 +45,10 @@ database.ref().on("child_added", function(snapshot) {
   $name = $("<td>" + name + "</td>");
   $role = $("<td>" + role + "</td>");
   $start = $("<td>" + start + "</td>");
-  $monthsworked = $("<td>" + monthDiffFromToday(start) + "</td>");
+  var iMonths = monthDiffFromToday(start) ;
+  $monthsworked = $("<td>" + iMonths + "</td>");
   $rate = $("<td>" + rate + "</td>");
-  $total = $("<td>"  + "</td>");
+  $total = $("<td>" + rate*iMonths + "</td>");
 
   $block.append($name);
   $block.append($role);
