@@ -22,10 +22,7 @@
 var database = firebase.database();
 
 //get the input values from the form
-var empName = $("#empName").val();
-var empRole = $("#empRole").val();
-var empStart = $("#empStart").val();
-var empRate = $("#empRate").val();
+
 
 
 // Initial Values
@@ -45,9 +42,14 @@ var empRate = $("#empRate").val();
 // --------------------------------------------------------------
 
 // Whenever a user clicks the submit-bid button
-$("#submit").on("click", function(event) { 
+$(".btn-primary").on("click", function(event) { 
   // Prevent form from submitting
   event.preventDefault();
+
+  var empName = $("#empName").val();
+  var empRole = $("#empRole").val();
+  var empStart = $("#empStart").val();
+  var empRate = $("#empRate").val();
 
   var newEmp = {
     name: empName,
