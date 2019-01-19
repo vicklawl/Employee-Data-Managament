@@ -22,10 +22,10 @@
 var database = firebase.database();
 
 //get the input values from the form
-var empName = $("#");
-var empRole = $("#");
-var empStart = $("#");
-var empRate = $("#");
+var empName = $("#empName").val();
+var empRole = $("#empRole").val();
+var empStart = $("#empStart").val();
+var empRate = $("#empRate").val();
 
 
 // Initial Values
@@ -36,7 +36,7 @@ var newEmp = {
   rate: empRate
 };
 
-database.ref().push(newEmp);
+
 
 // --------------------------------------------------------------
 
@@ -55,12 +55,7 @@ $("#submit").on("click", function(event) {
   event.preventDefault();
 
   // Get the input values
-
-
-
-
-  
-
+  database.ref().push(newEmp);
     
   });
 
