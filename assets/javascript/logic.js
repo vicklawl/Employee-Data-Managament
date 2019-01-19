@@ -20,8 +20,33 @@
 // Assign the reference to the database to a variable named 'database'
 var database = firebase.database();
 
-//get the input values from the form
+//get the db values to populate the table
+database.ref().on("value", function(snapshot) {
+  var name = snapshot.val().name;
+  var rate = snapshot.val().rate;
+  var role = snapshot.val().role;
+  var start = snapshot.val().start;
 
+  console.log("name from DB is " + name);
+
+  $block = $("<tr>");
+  $name = $("<td>" + name + "</td>");
+  $role = $("<td>" + role + "</td>");
+  $monthsworked = $("<td>" + "</td>");
+  $rate = $("<td>" + rate + "</td>");
+  $total = $("<td>"  + "</td>");
+
+  $block.append($name);
+  $block.append($role);
+  $block.append($monthsworked);
+  $block.append($rate);
+  $block.append($total);
+  $block.append("</tr>");
+
+  $("#myTable").append($block);
+}, function(errorObject) {
+  console.log("The read failed: " + errorObject.code);
+});
 
 
 // Initial Values
@@ -62,5 +87,10 @@ $("#onSubmit").on("click", function(event) {
   // Get the input values
   database.ref().push(newEmp);
     
+  });
+
+  database.ref().on("child_added", function(childSnapshot){
+    console.log(childSnapshot.val());
+
   });
 
