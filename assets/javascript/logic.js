@@ -1,6 +1,5 @@
 // Initialize Firebase
 
-{/* <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script> */}
 
   // Initialize Firebase
   var config = {
@@ -42,9 +41,11 @@ var database = firebase.database();
 // --------------------------------------------------------------
 
 // Whenever a user clicks the submit-bid button
-$(".btn-primary").on("click", function(event) { 
+$("#onSubmit").on("click", function(event) { 
   // Prevent form from submitting
   event.preventDefault();
+
+  console.log("Came to click submit button");
 
   var empName = $("#empName").val();
   var empRole = $("#empRole").val();
